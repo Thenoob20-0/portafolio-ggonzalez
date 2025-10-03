@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin: auto;
+}
+header {
+    background: #92a3f9;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: solid 8px #0730fe;
+    padding: 50px;
+}
+h1{
+    font-family: "Zalando Sans", sans-serif;
+    font-size: 50px;
+}
+h2{
+    font-family: "Zalando Sans", sans-serif;
+}
+
+p {
+    color: #000000;
+    font-family: "Schibsted Grotesk", sans-serif;
+
+}
+#foto-perfil {
+    width: 300px;
+    border-radius: 10px;
+    float: right;
+}
