@@ -150,14 +150,28 @@ progress {
     padding-right: 20px;
 }
 
-.campos input{
+.campos input, select{
     padding: 10px;
     border: solid 2px #187a9b;
     width: 50%;
     font-size: 20px;
     border-radius: 10px;
 }
-footer {
+
+.campos button{
+    background-color: #4f5be0;
+    color: #ffffff;
+    border: none;
+    font-size: 28px;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.campos .opciones{
+    width: 20px;
+}
+
+footer{
     overflow: hidden;
     padding: 40px 0;
     background-color: #5f74ec;
