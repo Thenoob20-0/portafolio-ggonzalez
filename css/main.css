@@ -6,6 +6,7 @@
 
 body {
     font-family: "Lato", sans-serif;
+    background-color: #f8fbfe;
 }
 
 header {
@@ -18,7 +19,7 @@ header {
 
 h1 {
     font-family: "Zalando Sans", sans-serif;
-    font-size: 50px;
+    font-size: 18px;
 }
 
 h2,
@@ -29,11 +30,28 @@ h3 {
 p {
     color: #000000;
     font-family: "Schibsted Grotesk", sans-serif;
-
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
-.bi{
+.bi {
     color: #F7F7F7;
+    padding: 5px 5px;
+}
+
+.nombre {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.portafolio {
+    font-size: 25px;
+}
+
+/*Seccion de redes: linkedin, github*/
+.redes {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #menu-principal {
@@ -46,23 +64,55 @@ nav {
     padding: 20px 0;
 }
 
+/*Seccion principal*/
 #menu-principal a {
+    position: relative;
     text-decoration: none;
-    color: #9206ce;
+    color: #0730fe;
     font-size: 25px;
     font-weight: bolder;
     padding: 8px;
+    transition: color 0.3s ease-in-out;
+}
+
+#menu-principal a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #8fa9ff;
+    transition: width 0.3s ease-in-out;
 }
 
 #menu-principal a:hover {
-    color: #ffffff;
-    background-color: #9206ce;
+    color: #0730fe;
+}
+
+#menu-principal a:hover::after {
+    width: 100%;
+}
+
+.titulo_p {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info_frase {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #foto-perfil {
     width: 300px;
     border-radius: 10px;
-    float: right;
+    display: flex;
 }
 
 main {
@@ -73,20 +123,27 @@ section {
     overflow: hidden;
 }
 
-#proyectos {
-    padding: 20px 30px;
-    border-top: solid 5px #373de8;
+/*Seccion de proyecto*/
+#proyecto {
+    padding: 20px 0px;
+    border-top: solid 5px #5d76f0;
     margin-top: 30px;
     text-align: center;
 }
 
 #lista-proyectos {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .proyecto {
-    width: 33%;
-    margin-top: 20px;
+    width: 45%;
+    margin: 20px 2.5%;
+    max-width: 500px;
+    padding: 0;
 }
 
 .proyecto img {
@@ -97,81 +154,220 @@ section {
 
 .proyecto p {
     text-align: justify;
-    padding: 10px 20px;
     color: #0730fe;
+    line-height: 1.5;
+    padding: 0 10px;
+    width: 95%;
+    margin: 10px auto;
 }
 
 .proyecto h3 {
-    color: #3e964b;
+    color: #406cf0;
     font-weight: lighter;
+    font-size: 20px;
 }
 
+.proyecto h2 {
+    margin: 0 auto 20px auto;
+    width: 100%;
+}
+
+/*Seccion de habilidades*/
 #habilidades {
     overflow: hidden;
     margin-top: 20px;
     padding: 20px;
-    border-top: solid 5px #dddddd;
-    margin-bottom: 30px;
+    border-top: solid 5px #5d76f0;
+    margin-bottom: 20px;
 }
 
+.subtitulo_leng {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dominio {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/*Seccion de barra*/
 progress {
     width: 100%;
     height: 25px;
     border-radius: 5px;
     margin: 10px 0;
+    background-color: #E0E0E0;
 }
 
-.lista-tecnologias {
-    list-style: none;
+progress::-webkit-progress-bar {
+    background-color: #d6d6d6;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #41c0b8;
+    border-radius: 5px;
+}
+
+/*Seccion de lenguajes*/
+.lenguajes {
     display: flex;
-    margin-left: 0;
-    gap: 15px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    padding: 0;
+    list-style: none;
 }
 
-.lista-tecnologias li {
-    background-color: #3498db;
-    color: #ffffff;
-    padding: 12px 20px;
-    border-radius: 25px;
-    text-align: center;
+.lenguajes li {
+    padding: 0;
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
 }
 
-#contacto{
-    padding: 40px;
-}
-
-.campos{
-    width: 70%;
-    clear: both;
-    font-size: 28px;
-}
-
-.campos label{
-    padding-right: 20px;
-}
-
-.campos input, select{
-    padding: 10px;
-    border: solid 2px #187a9b;
-    width: 50%;
-    font-size: 20px;
+.lenguajes img {
+    width: 80px;
+    height: 80px;
     border-radius: 10px;
+    background-color: #ffffff;
+    border: 3px solid #187a9b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
 
-.campos button{
+.lenguajes img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px #06c7ce;
+}
+
+/*Seccion de contacto*/
+#form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px #102cff1a;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ddd;
+}
+
+#form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #187a9b;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+#form textarea:focus {
+    border-color: #5d76f0;
+    outline: none;
+    box-shadow: 0 0 0 3px #5d76f033;
+}
+
+#contacto {
+    padding: 40px;
+    border-top: solid 8px #5d76f0;
+}
+
+.subtitulo_cont {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.campos,
+.campos1 {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.campos label,
+.campos1 label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.campos input,
+.campos.select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #187a9b;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fff;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.span.curso {
+    cursor: pointer;
+}
+
+.motivo {
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    border: 2px solid #187a9b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.campos button {
     background-color: #4f5be0;
     color: #ffffff;
     border: none;
-    font-size: 28px;
-    padding: 10px 30px;
+    font-size: 16px;
+    padding: 12px;
     border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.campos .opciones{
+.campos button:hover {
+    background-color: #3748c8;
+}
+
+.campos .opciones {
     width: 20px;
+    cursor: pointer;
 }
 
-footer{
+.comentarios {
+    width: 150px;
+    height: 35px;
+    font-size: 16px;
+    border: 2px solid #187a9b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*Seccion de pie de pagina*/
+.derechos {
+    text-align: center;
+    color: #ffffff
+}
+
+
+footer {
     overflow: hidden;
     padding: 40px 0;
     background-color: #5f74ec;
